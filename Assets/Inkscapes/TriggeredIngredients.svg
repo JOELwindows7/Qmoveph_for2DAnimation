@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="630.94075"
-     inkscape:cy="847.61009"
+     inkscape:zoom="0.35"
+     inkscape:cx="748.34887"
+     inkscape:cy="1274.0002"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -110,5 +110,59 @@
          x="22.201403"
          id="tspan825"
          sodipodi:role="line">TRIGGERED!</tspan></text>
+    <g
+       id="g861"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\tersinggung bar.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#ff9400;fill-opacity:1;stroke:none;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:25;stroke-opacity:1"
+         id="rect827"
+         width="541.86664"
+         height="67.73333"
+         x="0"
+         y="-236.40633" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:82.01533508px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.05038333"
+         x="30.668068"
+         y="-176.02396"
+         id="text833"
+         inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\tersinggung text.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"><tspan
+           sodipodi:role="line"
+           id="tspan831"
+           x="30.668068"
+           y="-176.02396"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono';stroke-width:2.05038333">TERSINGGUNG!</tspan></text>
+    </g>
+    <g
+       id="g856"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\triggered bar.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         y="-134.80632"
+         x="0"
+         height="67.73333"
+         width="541.86664"
+         id="rect829"
+         style="fill:#ff9400;fill-opacity:1;stroke:none;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:25;stroke-opacity:1" />
+      <text
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\triggered text.png"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:82.01533508px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.05038333"
+         x="73.001404"
+         y="-75.5149"
+         id="text827-4"><tspan
+           sodipodi:role="line"
+           id="tspan825-7"
+           x="73.001404"
+           y="-75.5149"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono';stroke-width:2.05038333">TRIGGERED!</tspan></text>
+    </g>
   </g>
 </svg>
