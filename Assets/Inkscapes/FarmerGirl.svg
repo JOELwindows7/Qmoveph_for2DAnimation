@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.90509668"
-     inkscape:cx="838.9674"
-     inkscape:cy="235.18163"
+     inkscape:zoom="0.64"
+     inkscape:cx="1335.7699"
+     inkscape:cy="1117.5021"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -656,6 +656,24 @@
          id="path942"
          d="m 736,1675.1333 v 32 l 28,24 z"
          style="fill:#ffff00;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1" />
+    </g>
+    <g
+       id="g939"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\FarmerGirlProsotipe\Rake.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         inkscape:connector-curvature="0"
+         id="path933"
+         d="m 1280,331.13332 v 64 h 320 v -64 h -64 v 32 h -64 v -32 h -64 v 32 h -64 v -32 z"
+         style="fill:#588d00;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1" />
+      <rect
+         y="395.13333"
+         x="1424"
+         height="1088"
+         width="32"
+         id="rect935"
+         style="fill:#917c6f;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:25;stroke-opacity:1" />
     </g>
   </g>
 </svg>
