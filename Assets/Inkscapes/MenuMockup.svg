@@ -429,9 +429,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="368.9054"
-     inkscape:cy="502.2427"
+     inkscape:zoom="0.7"
+     inkscape:cx="-511.08441"
+     inkscape:cy="234.04219"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -459,7 +459,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
         <cc:license
            rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
       </cc:Work>
@@ -1179,7 +1179,10 @@
        inkscape:randomized="0"
        d="m -810,501.25 c -93.72829,83.31404 253.31404,103.72829 170,10 -83.31404,-93.72829 -103.72829,253.31404 -10,170 93.72829,-83.31404 -253.31404,-103.72829 -170,-10 83.31404,93.72829 103.72829,-253.31404 10,-170 z"
        inkscape:transform-center-x="17.190569"
-       inkscape:transform-center-y="-6.821441" />
+       inkscape:transform-center-y="-6.821441"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\MavrickleIcon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="opacity:1;fill:#999999;fill-opacity:1;stroke:#333333;stroke-width:1.40131164;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        d="m 153.92881,845.86375 a 42.039351,42.039351 0 0 0 -0.38211,0.0135 l 27.57784,27.57784 -42.24501,42.24503 -26.9606,-26.96059 a 42.039351,42.039351 0 0 0 42.00988,41.20216 42.039351,42.039351 0 0 0 20.69632,-5.47771 l 90.80841,90.80832 c 1.82712,1.8271 4.76874,1.8271 6.59584,0 l 14.68717,-14.6871 c 1.8271,-1.82708 1.8271,-4.76868 0,-6.59588 l -92.91884,-92.91876 a 42.039351,42.039351 0 0 0 2.17039,-13.16814 42.039351,42.039351 0 0 0 -42.03929,-42.03929 z"
@@ -1189,7 +1192,10 @@
        inkscape:connector-curvature="0"
        id="path958"
        d="m -379.8689,36.043173 a 42.039351,42.039351 0 0 0 -0.38211,0.0135 l 27.57784,27.57784 -42.24501,42.245027 -26.9606,-26.960587 a 42.039351,42.039351 0 0 0 42.00988,41.202157 42.039351,42.039351 0 0 0 20.69632,-5.47771 l 90.80841,90.80832 c 1.82712,1.8271 4.76874,1.8271 6.59584,0 l 14.68717,-14.6871 c 1.8271,-1.82708 1.8271,-4.76868 0,-6.59588 L -340,91.249983 a 42.039351,42.039351 0 0 0 2.17039,-13.16814 42.039351,42.039351 0 0 0 -42.03929,-42.03929 z"
-       style="opacity:1;fill:#999999;fill-opacity:1;stroke:#333333;stroke-width:1.40131164;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+       style="opacity:1;fill:#999999;fill-opacity:1;stroke:#333333;stroke-width:1.40131164;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\SettingIcon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:166.20487976px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.1551218"
@@ -1324,5 +1330,100 @@
        d="m 1362.4187,746.25 -74.8374,43.20739 v -86.41478 z"
        inkscape:transform-center-x="-12.472883"
        inkscape:transform-center-y="2.7942148e-005" />
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#008080;fill-opacity:1;stroke:#333333;stroke-width:1.55911219;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1042-2"
+       sodipodi:sides="3"
+       sodipodi:cx="-374.27465"
+       sodipodi:cy="-48.750017"
+       sodipodi:r1="49.891594"
+       sodipodi:r2="24.945795"
+       sodipodi:arg1="0"
+       sodipodi:arg2="1.0471976"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -324.38306,-48.750015 -74.8374,43.2073875 V -91.957403 Z"
+       inkscape:transform-center-x="-12.472883"
+       inkscape:transform-center-y="2.7942148e-05"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\PlayIcon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:166.20487976px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.1551218"
+       x="-339.31052"
+       y="389.08929"
+       id="text962-1"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\UnkownIcon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan960-9"
+         x="-339.31052"
+         y="389.08929"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;stroke-width:4.1551218">?</tspan></text>
+    <g
+       id="g1008-1"
+       transform="matrix(0.67513457,0,0,0.67513457,-903.73737,-303.21632)"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\ExtrasIcon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1003-1"
+         d="m 775,1161.25 v -20 c 0,0 0,-10 10,-10 10,0 105,0 105,0 0,0 10,0 10,10 0,10 0,20 0,20 z"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         ry="7.7480402"
+         y="1161.25"
+         x="680"
+         height="180"
+         width="310"
+         id="rect999-4"
+         style="opacity:1;fill:#803a00;fill-opacity:1;stroke:#333333;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      <path
+         inkscape:transform-center-y="-6.8965791"
+         d="m 840,1175.9246 17.00658,48.8143 51.68054,1.0898 -41.16989,31.2587 14.93375,49.4878 L 840,1277.0798 l -42.45098,29.4954 14.93375,-49.4878 -41.16989,-31.2587 51.68054,-1.0898 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="-0.9424778"
+         sodipodi:arg1="-1.5707963"
+         sodipodi:r2="28.933327"
+         sodipodi:r1="72.221916"
+         sodipodi:cy="1248.1465"
+         sodipodi:cx="840"
+         sodipodi:sides="5"
+         id="path1001-7"
+         style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:#333333;stroke-width:2.62625146;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         sodipodi:type="star" />
+    </g>
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:0.42774568;stroke:#333333;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="m -340,651.24997 a 80,80 0 0 0 -80,80 80,80 0 0 0 80,80.00002 80,80 0 0 0 80,-80.00002 80,80 0 0 0 -80,-80 z m 0,60 a 20,20 0 0 1 20,20 20,20 0 0 1 -20,20 20,20 0 0 1 -20,-20 20,20 0 0 1 20,-20 z"
+       id="path978-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\ChangeDVDIcon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       transform="translate(-2065.4842,28.695343)"
+       id="g976-9"
+       inkscape:export-filename="C:\Users\ASUS\Documents\starring codes\Unity Projects\Qmoveph_for2DAnimation\Assets\Sprites\QuitIcon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         inkscape:connector-curvature="0"
+         id="path966-3"
+         d="m 1644.5641,846.54539 h 161.8402 v 114.01387 h -161.8402 z"
+         style="fill:none;stroke:#000000;stroke-width:3.92131233px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path964-7"
+         d="m 1644.4086,846.3487 133.7862,38.10296 V 998.76058 L 1644.4086,960.6576 Z"
+         style="fill:#917c6f;stroke:#000000;stroke-width:3.56989145px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
   </g>
 </svg>

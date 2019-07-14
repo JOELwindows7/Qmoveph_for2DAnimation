@@ -76,4 +76,34 @@ public class MenuArea : MonoBehaviour
     {
         Application.Quit();
     }
+
+    //Buttonings
+    public void PlayButton()
+    {
+
+    }
+    public void MoreHover()
+    {
+
+    }
+    public void SettingButton()
+    {
+
+    }
+    public void UnknownButton()
+    {
+
+    }
+    public void ExtrasButton()
+    {
+
+    }
+    public void ChangeDVDButton()
+    {
+
+    }
+    public void QuitButton()
+    {
+        ExitGame();
+    }
 }
