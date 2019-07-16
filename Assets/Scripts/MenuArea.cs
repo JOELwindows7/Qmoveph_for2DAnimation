@@ -83,7 +83,14 @@ public class MenuArea : MonoBehaviour
     //Buttonings
     public void PlayButton()
     {
-        canvasCore.MenuRightNow = CanvasCore.MenuLocation.LevelSelect;
+        if (pauseMenuMode)
+        {
+            canvasCore.MenuRightNow = CanvasCore.MenuLocation.Gameplay;
+        }
+        else
+        {
+            canvasCore.MenuRightNow = CanvasCore.MenuLocation.LevelSelect;
+        }
     }
     public void MoreHover()
     {

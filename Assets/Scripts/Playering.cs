@@ -82,7 +82,7 @@ public class Playering : MonoBehaviour
         if (isAlive)
         {
             GetComponent<Animator>().SetBool("EikSerkat", false);
-            if (HP <= 0f)
+            if (HP1 <= 0f)
             {
                 isAlive = false;
             }
@@ -109,7 +109,7 @@ public class Playering : MonoBehaviour
         } else
         {
             GetComponent<Animator>().SetBool("EikSerkat", true);
-            if (HP > 0f)
+            if (HP1 > 0f)
             {
                 isAlive = true;
             }
@@ -122,6 +122,13 @@ public class Playering : MonoBehaviour
     public void MoveDirect(float Xcoord)
     {
         GetComponent<Animator>().SetBool("Walking", true);
+        if (Xcoord < 0f)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        } else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
         if (isAlive)
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.right * Xcoord * boost);
@@ -162,30 +169,30 @@ public class Playering : MonoBehaviour
     //HP manipulate
     public void heal(float howMuch)
     {
-        HP += howMuch;
+        HP1 += howMuch;
         correctHP();
     }
     public void damage(float howMuch)
     {
-        HP -= howMuch;
+        HP1 -= howMuch;
         correctHP();
     }
     void correctHP()
     {
-        if (HP < 0f)
+        if (HP1 < 0f)
         {
-            HP = 0f;
+            HP1 = 0f;
         }
-        if (HP > 100f)
+        if (HP1 > 100f)
         {
-            HP = 100f;
+            HP1 = 100f;
         }
     }
 
     //Functional
     public void respawn()
     {
-        HP = 100f;
+        HP1 = 100f;
         transform.position = RespawnLocation;
     }
     public void checkpoint()
@@ -204,6 +211,9 @@ public class Playering : MonoBehaviour
 
     //Grounded Colliding
     [SerializeField] bool CollideGrounded = false;
+
+    public float HP1 { get => HP; set => HP = value; }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         CollideGrounded = true;

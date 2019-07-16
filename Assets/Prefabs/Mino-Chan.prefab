@@ -165,10 +165,10 @@ MonoBehaviour:
   Deadzoning: 0.1
   Velocitying: 0
   AnalogStickValue: 0
-  boost: 10
+  boost: 5
   HasJumpPressed: 0
   JumpToken: 2
-  JumpStrength: 350
+  JumpStrength: 230
   CollideGrounded: 0
 --- !u!1 &5202792647394302500
 GameObject:

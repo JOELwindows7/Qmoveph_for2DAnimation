@@ -90,7 +90,7 @@ public class CanvasCore : MonoBehaviour
 
         if (OnGoingLoading)
         {
-            if (rawProgress >= 100f)
+            if (rawProgress >= 90f)
             {
                 OnGoingLoading = false;
             }
@@ -102,8 +102,11 @@ public class CanvasCore : MonoBehaviour
 
         if (isPlayingGame)
         {
-            Titler.SetActive(false);
+            //Titler.SetActive(false);
             LoopingArea.SetActive(false);
+        } else
+        {
+            LoopingArea.SetActive(true);
         }
 
         if(MenuRightNow != MenuLocation.Main)
@@ -147,7 +150,10 @@ public class CanvasCore : MonoBehaviour
     }
 
     //ButtonPassing
-
+    public void BackToMainMenuButton()
+    {
+        MenuRightNow = MenuLocation.Main;
+    }
 
     //Loading Level
     [SerializeField] bool OnGoingLoading;
@@ -155,6 +161,9 @@ public class CanvasCore : MonoBehaviour
     [SerializeField] float rawProgress;
     [SerializeField] TextMeshProUGUI progressText;
     [SerializeField] GameObject loadingScreen;
+
+    public bool OnGoingLoading1 { get => OnGoingLoading; set => OnGoingLoading = value; }
+
     public void LoadLevel(int sceneIndex)
     {
         StartCoroutine(LoadAsynchronously(sceneIndex, LoadSceneMode.Single));
@@ -189,6 +198,7 @@ public class CanvasCore : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex, loadSceneModing);
         OnGoingLoading = true;
+        rawProgress = operation.progress;
 
         //if (loadingScreen && slider.value < .985f) loadingScreen.SetActive(true);
 
@@ -211,7 +221,10 @@ public class CanvasCore : MonoBehaviour
                 }
 
             }
-
+            if (operation.isDone)
+            {
+                OnGoingLoading = false;
+            }
             yield return null;
         }
     }
@@ -220,7 +233,7 @@ public class CanvasCore : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, loadSceneModing);
         OnGoingLoading = true;
-
+        rawProgress = operation.progress;
         //if (loadingScreen && slider.value < .985f) loadingScreen.SetActive(true);
 
         while (!operation.isDone)
@@ -240,7 +253,10 @@ public class CanvasCore : MonoBehaviour
                 }
 
             }
-
+            if (operation.isDone)
+            {
+                OnGoingLoading = false;
+            }
             yield return null;
         }
     }
@@ -249,7 +265,7 @@ public class CanvasCore : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.UnloadSceneAsync(sceneIndex);
         OnGoingLoading = true;
-
+        rawProgress = operation.progress;
         //if (loadingScreen && slider.value < .985f) loadingScreen.SetActive(true);
 
         while (!operation.isDone)
@@ -270,7 +286,10 @@ public class CanvasCore : MonoBehaviour
                 }
 
             }
-
+            if (operation.isDone)
+            {
+                OnGoingLoading = false;
+            }
             yield return null;
         }
     }
@@ -279,7 +298,7 @@ public class CanvasCore : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.UnloadSceneAsync(sceneName);
         OnGoingLoading = true;
-
+        rawProgress = operation.progress;
         //if (loadingScreen && slider.value < .985f) loadingScreen.SetActive(true);
 
         while (!operation.isDone)
@@ -300,7 +319,10 @@ public class CanvasCore : MonoBehaviour
                 }
 
             }
-
+            if (operation.isDone)
+            {
+                OnGoingLoading = false;
+            }
             yield return null;
         }
     }

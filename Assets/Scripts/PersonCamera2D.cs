@@ -24,11 +24,11 @@ public class PersonCamera2D : MonoBehaviour
     {
         if (playering)
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, playering.transform.position.x, Time.deltaTime * LerpDampen), Mathf.Lerp(transform.position.y, playering.transform.position.y, Time.deltaTime * LerpDampen));
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, playering.transform.position.x, Time.deltaTime * LerpDampen), Mathf.Lerp(transform.position.y, playering.transform.position.y, Time.deltaTime * LerpDampen), -10f);
         }
         else
         {
-            transform.position = Vector3.zero;
+            transform.position = new Vector3(0f, 0f, -10f);
         }
     }
 
