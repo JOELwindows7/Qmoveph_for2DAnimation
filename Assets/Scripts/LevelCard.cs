@@ -8,7 +8,7 @@ public class LevelCard : MonoBehaviour
     [SerializeField] string PlayLevelOfName = "MockupScene";
     void awake()
     {
-        canvasCore = gameObject.transform.parent.parent.parent.parent.parent.GetComponent<CanvasCore>();
+        //canvasCore = gameObject.transform.parent.parent.parent.parent.parent.GetComponent<CanvasCore>();
     }
     // Start is called before the first frame update
     void Start()

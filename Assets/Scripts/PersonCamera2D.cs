@@ -32,6 +32,11 @@ public class PersonCamera2D : MonoBehaviour
         }
     }
 
+    public void ZeroCamera()
+    {
+        transform.position = new Vector3(0f, 0f, -10f);
+    }
+
         // Start is called before the first frame update
     void Start()
     {

@@ -15,9 +15,11 @@ public class CanvasCore : MonoBehaviour
     public bool isPauseGame = false;
     public GameObject MainMenuItself, LevelSelectMenu, SettingMenu, UnknownMenu, ExtrasMenu, GameplayMenu;
     public GameObject dialoging;
+    public PersonCamera2D cameraing;
 
     void Awake()
     {
+        CurrentLevelName = SceneManager.GetActiveScene().ToString();
         GameObject[] HexEngineCores = GameObject.FindGameObjectsWithTag("HexagonEngineCore");
 
         if (HexEngineCores.Length > 1)
@@ -100,13 +102,30 @@ public class CanvasCore : MonoBehaviour
             if (loadingScreen) loadingScreen.SetActive(false);
         }
 
+        if (!cameraing)
+        {
+            GameObject go = GameObject.FindGameObjectWithTag("MainCamera");
+            if (go)
+            {
+                cameraing = go.GetComponent<PersonCamera2D>();
+            }
+        }
+
         if (isPlayingGame)
         {
             //Titler.SetActive(false);
+            Titler.transform.position = new Vector3(cameraing.transform.position.x,cameraing.transform.position.y,0f);
             LoopingArea.SetActive(false);
+            LoopingArea.transform.position = new Vector3(cameraing.transform.position.x, cameraing.transform.position.y, 0f);
+            MainMenuItself.GetComponent<MenuArea>().pauseMenuMode = true;
         } else
         {
+            Titler.transform.position = Vector3.zero;
             LoopingArea.SetActive(true);
+            LoopingArea.transform.position = Vector3.zero;
+            MainMenuItself.GetComponent<MenuArea>().pauseMenuMode = false;
+
+            cameraing.ZeroCamera();
         }
 
         if(MenuRightNow != MenuLocation.Main)
@@ -122,6 +141,7 @@ public class CanvasCore : MonoBehaviour
     [SerializeField] bool isPlayingGame;
     public void PlayTheLevel(string PassName)
     {
+        //UnloadLevel(CurrentLevelName);
         LoadLevel(PassName);
         CurrentLevelName = PassName;
         isPlayingGame = true;
@@ -129,7 +149,8 @@ public class CanvasCore : MonoBehaviour
     }
     public void LeaveTheLevel()
     {
-        UnloadLevel(CurrentLevelName);
+        //UnloadLevel(CurrentLevelName);
+        LoadLevel("SampleScene");
         isPlayingGame = false;
         MenuRightNow = MenuLocation.Main;
     }
@@ -141,7 +162,7 @@ public class CanvasCore : MonoBehaviour
     }
     public void YesDialog()
     {
-        dialoging.SetActive(true);
+        dialoging.SetActive(false);
         MainMenuItself.GetComponent<MenuArea>().ConfirmQuit();
     }
     public void NoDialog()
@@ -198,7 +219,7 @@ public class CanvasCore : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex, loadSceneModing);
         OnGoingLoading = true;
-        rawProgress = operation.progress;
+        rawProgress = operation.progress * 100f;
 
         //if (loadingScreen && slider.value < .985f) loadingScreen.SetActive(true);
 
@@ -206,7 +227,7 @@ public class CanvasCore : MonoBehaviour
         {
             
             float progress = Mathf.Clamp01(operation.progress / .9f);
-            rawProgress = progress;
+            rawProgress = operation.progress * 100f;
             //Debug.Log(progress);
 
             if (slider) slider.value = progress;
@@ -233,12 +254,13 @@ public class CanvasCore : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, loadSceneModing);
         OnGoingLoading = true;
-        rawProgress = operation.progress;
+        rawProgress = operation.progress * 100f;
         //if (loadingScreen && slider.value < .985f) loadingScreen.SetActive(true);
 
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
+            rawProgress = operation.progress * 100f;
             //Debug.Log(progress);
 
             if (slider) slider.value = progress;
@@ -265,13 +287,13 @@ public class CanvasCore : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.UnloadSceneAsync(sceneIndex);
         OnGoingLoading = true;
-        rawProgress = operation.progress;
+        rawProgress = operation.progress * 100f;
         //if (loadingScreen && slider.value < .985f) loadingScreen.SetActive(true);
 
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
-            rawProgress = progress;
+            rawProgress = operation.progress * 100f;
             //Debug.Log(progress);
 
             if (slider) slider.value = progress;
@@ -298,13 +320,13 @@ public class CanvasCore : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.UnloadSceneAsync(sceneName);
         OnGoingLoading = true;
-        rawProgress = operation.progress;
+        rawProgress = operation.progress * 100f;
         //if (loadingScreen && slider.value < .985f) loadingScreen.SetActive(true);
 
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
-            rawProgress = progress;
+            rawProgress = operation.progress * 100f;
             //Debug.Log(progress);
 
             if (slider) slider.value = progress;

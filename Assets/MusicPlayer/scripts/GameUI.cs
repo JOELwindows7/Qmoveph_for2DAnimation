@@ -9,6 +9,7 @@ public class GameUI : MonoBehaviour
     public PersonCamera2D Cameraing;
     public CanvasCore canvasCore;
     public Slider HPSlider;
+    public GameObject EikSerkatPanel;
     public float Deadzoning = 0.1f;
 
     public void PauseButton()
@@ -40,8 +41,22 @@ public class GameUI : MonoBehaviour
         }
         else
         {
-            canvasCore.OnGoingLoading1 = false;
+            //canvasCore.OnGoingLoading1 = false;
             HPSlider.value = player.HP1;
+            if (player.IsAlive)
+            {
+                if (EikSerkatPanel)
+                {
+                    EikSerkatPanel.SetActive(false);
+                }
+            } else
+            {
+                if (EikSerkatPanel)
+                {
+                    EikSerkatPanel.SetActive(true);
+                }
+            }
+
             if (Input.GetAxisRaw("Horizontal") < -Deadzoning || Input.GetAxisRaw("Horizontal") > Deadzoning)
             {
                 player.MoveDirect(Input.GetAxisRaw("Horizontal"));
@@ -58,6 +73,23 @@ public class GameUI : MonoBehaviour
             else
             {
                 player.StopJump();
+            }
+            
+            if(Input.GetAxisRaw("Fire1") > .5f)
+            {
+                player.AttacNow();
+            }
+            else
+            {
+                player.StopAttac();
+            }
+
+            if (Input.GetAxisRaw("Fire3") > .5f)
+            {
+                player.SledNow();
+            } else
+            {
+                player.StopSled();
             }
         }
     }

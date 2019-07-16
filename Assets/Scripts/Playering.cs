@@ -10,6 +10,8 @@ public class Playering : MonoBehaviour
     //Checking
     public CanvasCore checkCanvasCore;
     public GroundRayTrigger RayTrigger;
+    public BoxCollider2D smolCollider;
+
     //Parametering
     [SerializeField] float FootGroundLength = 2f;
 
@@ -77,10 +79,30 @@ public class Playering : MonoBehaviour
         GetComponent<Animator>().SetFloat("Velocity", Velocitying);
         GetComponent<Animator>().SetBool("Grounded", ActualGrounded);
 
+        if (SledOffCountdown > 0f)
+        {
+            SledOffCountdown -= Time.deltaTime;
+        } else
+        {
+            Sleded = false;
+        }
+
+        
+
+
         //GetComponent<Rigidbody2D>().AddForce(Vector2.right *20f);
 
         if (isAlive)
         {
+            if (Sleded)
+            {
+                GetComponent<Collider2D>().enabled = false;
+                smolCollider.gameObject.SetActive(true);
+            } else
+            {
+                GetComponent<Collider2D>().enabled = true;
+                smolCollider.gameObject.SetActive(false);
+            }
             GetComponent<Animator>().SetBool("EikSerkat", false);
             if (HP1 <= 0f)
             {
@@ -105,14 +127,48 @@ public class Playering : MonoBehaviour
                 {
                     StopJump();
                 }
+
+                if (Input.GetAxisRaw("Fire1") > .5f)
+                {
+                    AttacNow();
+                }
+                else
+                {
+                    StopAttac();
+                }
+
+                if (Input.GetAxisRaw("Fire3") > .5f)
+                {
+                    SledNow();
+                }
+                else
+                {
+                    StopSled();
+                }
             }
+            
+            RespawnCountdown = RespawnIn;
         } else
         {
+            GetComponent<Collider2D>().enabled = false;
+            smolCollider.gameObject.SetActive(true);
             GetComponent<Animator>().SetBool("EikSerkat", true);
             if (HP1 > 0f)
             {
                 isAlive = true;
             }
+
+            RespawnCountdown -= Time.deltaTime;
+
+            if (RespawnCountdown <= 0f)
+            {
+                respawn();
+            }
+        }
+        if (ScronchSelfButton)
+        {
+            ScronchSelf();
+            ScronchSelfButton = false;
         }
     }
 
@@ -166,6 +222,84 @@ public class Playering : MonoBehaviour
         HasJumpPressed = false;
     }
 
+    //Sled
+    [SerializeField] bool SledPress = false;
+    [SerializeField] bool Sleded = false;
+    [SerializeField] float SledOffIn = 2f;
+    [SerializeField] float SledOffCountdown = 2f;
+    public float SledPower = 20f;
+    public void SledNow()
+    {
+        if (!SledPress)
+        {
+            if (isAlive)
+            {
+                if(Velocitying > .5f || Velocitying < -.5f)
+                {
+                    if(Velocitying > .5f)
+                    {
+                        GetComponent<Rigidbody2D>().AddForce(Vector2.right * SledPower);
+                    } else if(Velocitying < -.5f)
+                    {
+                        GetComponent<Rigidbody2D>().AddForce(Vector2.left * SledPower);
+                    }
+                    GetComponent<Animator>().SetTrigger("SledNow");
+                    Sleded = true;
+                    SledOffCountdown = SledOffIn;
+                }
+            } else
+            {
+
+            }
+            SledPress = true;
+        }
+    }
+    public void StopSled()
+    {
+        SledPress = false;
+    }
+
+    //Attac
+    [SerializeField] bool AttacPress = false;
+    [SerializeField] float AttacSledPower = 50f;
+    public void AttacNow()
+    {
+        if (!AttacPress)
+        {
+            if (isAlive)
+            {
+                if (ActualGrounded)
+                {
+                    GetComponent<Animator>().SetTrigger("attacNow");
+                    if (GetComponent<Animator>().GetBool("attacFlipFlop"))
+                    {
+                        GetComponent<Animator>().SetBool("attacFlipFlop", false);
+                    }
+                    else
+                    {
+                        GetComponent<Animator>().SetBool("attacFlipFlop", true);
+                    }
+                    if (Velocitying > .5f)
+                    {
+                        GetComponent<Rigidbody2D>().AddForce(Vector2.right * AttacSledPower);
+                    }
+                    else if (Velocitying < -.5f)
+                    {
+                        GetComponent<Rigidbody2D>().AddForce(Vector2.left * AttacSledPower);
+                    }
+                }
+            } else
+            {
+
+            }
+            AttacPress = true;
+        }
+    }
+    public void StopAttac()
+    {
+        AttacPress = false;
+    }
+
     //HP manipulate
     public void heal(float howMuch)
     {
@@ -208,11 +342,21 @@ public class Playering : MonoBehaviour
         RespawnLocation = newLocation;
     }
 
+    //EikSerkat
+    [SerializeField] float RespawnCountdown = 5f;
+    public float RespawnIn = 5f;
+    public bool ScronchSelfButton = false;
+    public void ScronchSelf()
+    {
+        damage(1000f);
+    }
+
 
     //Grounded Colliding
     [SerializeField] bool CollideGrounded = false;
 
     public float HP1 { get => HP; set => HP = value; }
+    public bool IsAlive { get => isAlive; set => isAlive = value; }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
