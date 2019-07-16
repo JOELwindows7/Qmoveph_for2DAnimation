@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8926011019577382229}
   m_Layer: 0
   m_Name: Mino-Chan
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,6 +158,9 @@ MonoBehaviour:
   FootGroundLength: 2
   ActualGrounded: 0
   RayGrounded: 0
+  HP: 100
+  isAlive: 1
+  RespawnLocation: {x: 0, y: 0, z: 0}
   needInitiativeControls: 0
   Deadzoning: 0.1
   Velocitying: 0

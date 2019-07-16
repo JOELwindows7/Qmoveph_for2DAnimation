@@ -15,6 +15,9 @@ public class MenuArea : MonoBehaviour
     public GameObject lastSelectedGameObject;
     // https://forum.unity.com/threads/solved-last-selected-button.289357/
     public EventSystem eventSystem;
+
+    public CanvasCore canvasCore;
+    public bool pauseMenuMode = false;
     
     // Start is called before the first frame update
     void Start()
@@ -80,7 +83,7 @@ public class MenuArea : MonoBehaviour
     //Buttonings
     public void PlayButton()
     {
-
+        canvasCore.MenuRightNow = CanvasCore.MenuLocation.LevelSelect;
     }
     public void MoreHover()
     {
@@ -104,6 +107,26 @@ public class MenuArea : MonoBehaviour
     }
     public void QuitButton()
     {
-        ExitGame();
+        canvasCore.InvokeDialog();
+        if (pauseMenuMode)
+        {
+
+        }
+        else
+        {
+            
+        }
+    }
+
+    public void ConfirmQuit()
+    {
+        if (pauseMenuMode)
+        {
+            canvasCore.LeaveTheLevel();
+        }
+        else
+        {
+            ExitGame();
+        }
     }
 }

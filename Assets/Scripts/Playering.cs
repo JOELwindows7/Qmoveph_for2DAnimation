@@ -16,10 +16,14 @@ public class Playering : MonoBehaviour
     //Statusing
     public bool ActualGrounded = false;
     [SerializeField] bool RayGrounded = false;
+    [SerializeField] [Range(0f, 100f)] float HP = 100f;
+    [SerializeField] bool isAlive = true;
+    [SerializeField] Vector3 RespawnLocation;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        checkpoint();
     }
 
     // Update is called once per frame
@@ -46,26 +50,7 @@ public class Playering : MonoBehaviour
             needInitiativeControls = false;
         }
 
-        if (needInitiativeControls)
-        {
-            if (Input.GetAxisRaw("Horizontal") < -Deadzoning || Input.GetAxisRaw("Horizontal") > Deadzoning)
-            {
-                MoveDirect(Input.GetAxisRaw("Horizontal"));
-            }
-            else
-            {
-                StopMove();
-            }
-
-            if (Input.GetAxisRaw("Jump") > .5f)
-            {
-                JumpNow();
-            }
-            else
-            {
-                StopJump();
-            }
-        }
+        
 
         if (RayTrigger.Colliding)
         {
@@ -93,6 +78,42 @@ public class Playering : MonoBehaviour
         GetComponent<Animator>().SetBool("Grounded", ActualGrounded);
 
         //GetComponent<Rigidbody2D>().AddForce(Vector2.right *20f);
+
+        if (isAlive)
+        {
+            GetComponent<Animator>().SetBool("EikSerkat", false);
+            if (HP <= 0f)
+            {
+                isAlive = false;
+            }
+            if (needInitiativeControls)
+            {
+                if (Input.GetAxisRaw("Horizontal") < -Deadzoning || Input.GetAxisRaw("Horizontal") > Deadzoning)
+                {
+                    MoveDirect(Input.GetAxisRaw("Horizontal"));
+                }
+                else
+                {
+                    StopMove();
+                }
+
+                if (Input.GetAxisRaw("Jump") > .5f)
+                {
+                    JumpNow();
+                }
+                else
+                {
+                    StopJump();
+                }
+            }
+        } else
+        {
+            GetComponent<Animator>().SetBool("EikSerkat", true);
+            if (HP > 0f)
+            {
+                isAlive = true;
+            }
+        }
     }
 
     [SerializeField] float Velocitying;
@@ -101,7 +122,10 @@ public class Playering : MonoBehaviour
     public void MoveDirect(float Xcoord)
     {
         GetComponent<Animator>().SetBool("Walking", true);
-        GetComponent<Rigidbody2D>().AddForce(Vector2.right * Xcoord * boost);
+        if (isAlive)
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.right * Xcoord * boost);
+        }
         AnalogStickValue = Xcoord;
     }
     public void StopMove()
@@ -116,10 +140,16 @@ public class Playering : MonoBehaviour
     {
         if (!HasJumpPressed)
         {
-            if (JumpToken > 0)
+            if (isAlive)
             {
-                GetComponent<Rigidbody2D>().AddForce(Vector2.up *JumpStrength);
-                JumpToken--;
+                if (JumpToken > 0)
+                {
+                    GetComponent<Rigidbody2D>().AddForce(Vector2.up * JumpStrength);
+                    JumpToken--;
+                }
+            } else
+            {
+                
             }
             HasJumpPressed = true;
         }
@@ -127,6 +157,48 @@ public class Playering : MonoBehaviour
     public void StopJump()
     {
         HasJumpPressed = false;
+    }
+
+    //HP manipulate
+    public void heal(float howMuch)
+    {
+        HP += howMuch;
+        correctHP();
+    }
+    public void damage(float howMuch)
+    {
+        HP -= howMuch;
+        correctHP();
+    }
+    void correctHP()
+    {
+        if (HP < 0f)
+        {
+            HP = 0f;
+        }
+        if (HP > 100f)
+        {
+            HP = 100f;
+        }
+    }
+
+    //Functional
+    public void respawn()
+    {
+        HP = 100f;
+        transform.position = RespawnLocation;
+    }
+    public void checkpoint()
+    {
+        RespawnLocation = transform.position;
+    }
+    public void checkpoint(Vector3 newLocation)
+    {
+        RespawnLocation = newLocation;
+    }
+    public void checkpoint(Vector2 newLocation)
+    {
+        RespawnLocation = newLocation;
     }
 
 
